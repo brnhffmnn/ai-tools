@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "filesystem": {
+        "command": "npx",
+        "args": [
+            "-y",
+            "@modelcontextprotocol/server-filesystem",
+            "/Users/brian.hoffmann/workspace",
+            "/Users/brian.hoffmann/Library/CloudStorage"
+        ]
+    },
+    "git": {
+      "command": "npx",
+      "args": ["@cyanheads/git-mcp-server"]
+    },
+    "bash": {
+      "command": "npx",
+      "args": ["bash-mcp"]
+    },
+    "excel": {
+      "command": "npx",
+      "args": ["--yes", "@negokaz/excel-mcp-server"],
+      "env": {
+          "EXCEL_MCP_PAGING_CELLS_LIMIT": "4000"
+      }
+    },
+    "serena": {
+      "command": "/opt/homebrew/bin/uvx",
+      "args": ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "agent", "--mode", "planning", "--mode", "interactive", "--mode", "editing"]
+    }
+  }
+}
